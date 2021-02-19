@@ -31,6 +31,6 @@ export default class CreateAppointments1613699545717
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    queryRunner.dropTable('appointments');
+    await queryRunner.dropTable('appointments');
   }
 }
