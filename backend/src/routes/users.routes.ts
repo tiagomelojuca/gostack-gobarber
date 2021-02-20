@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { hash } from 'bcryptjs';
 
 import CreateUserService from '../services/CreateUserService';
 
@@ -11,11 +10,10 @@ usersRouter.post('/', async (req, res) => {
 
     const createUserService = new CreateUserService();
 
-    const hashedPassword = await hash(password, 8);
     const user = await createUserService.execute({
       name,
       email,
-      password: hashedPassword,
+      password,
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
