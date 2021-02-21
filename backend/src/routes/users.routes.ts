@@ -16,7 +16,6 @@ usersRouter.post('/', async (req, res) => {
       password,
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password: justDiscardThis, ...userWithoutPasswd } = user;
 
     return res.json(userWithoutPasswd);

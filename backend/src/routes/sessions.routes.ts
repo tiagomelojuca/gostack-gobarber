@@ -16,7 +16,6 @@ sessionsRouter.post('/', async (req, res) => {
     });
 
     const { user: userWithPassword, token } = authenticatedUser;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password: justDiscardThis, ...user } = userWithPassword;
 
     return res.json({ user, token });
